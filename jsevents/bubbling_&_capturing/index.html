@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .outer {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+    }
+
+    .inner {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+
+    .center {
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+    }
+</style>
+<script>
+    function outerFunc() {
+        console.log("outer");
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        const inner = document.querySelector('.inner');
+        const outer = document.querySelector('.outer');
+        const center = document.querySelector('.center');
+        console.log(inner)
+        inner.addEventListener('click', innerFunc, true);
+        inner.addEventListener('click', innerFunc);
+        outer.onclick = outerFunc;
+        center.onclick = centerFunc;
+
+        function innerFunc(event) {
+            console.log("inner");
+            console.log("phase " + event.eventPhase);
+        }
+
+        function outerFunc() {
+            console.log("outer");
+        }
+
+        function centerFunc() {
+            console.log("center");
+            console.log("phase " + event.eventPhase);
+        }
+
+
+    });
+
+
+
+</script>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            <div class="center"></div>
+        </div>
+    </div>
+</body>
+
+</html>

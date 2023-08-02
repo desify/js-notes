@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .outer {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+    }
+
+    .inner {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+
+    .center {
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const innerDiv = document.querySelector('.inner');
+        // innerDiv.onclick = innerFunc;
+
+        // 3/. using addEventListener() method
+        innerDiv.addEventListener('click', innerFunc);
+        console.log('innerDiv = ', innerDiv);
+
+        function centerFunc(event) {
+            console.log("center");
+        }
+
+        function outerFunc(event) {
+            console.log("outer");
+        }
+
+        function innerFunc(event) {
+            console.log("inner");
+            console.log("this = ", this);
+            console.log("target = ", event.target);
+            console.log("current target = ", event.currentTarget);
+        }
+    });
+
+</script>
+
+<body>
+    <!-- using HTML attribute -->
+
+    <!-- <div class="outer" id="outer" onclick="outerFunc(event)">
+        <p class="inner" onclick="innerFunc(event)">
+            I'm a paragraph
+            <span class="center" onclick="centerFunc(event)"> I'm a span</span>
+        </p>
+    </div> -->
+    <!-- <div class="outer" id="outer">
+        <p class="inner" onclick="alert(this)">
+            I'm a paragraph
+            <span class="center" onclick="alert(this)">
+                I'm a span
+            </span>
+        </p>
+    </div> -->
+
+    <!-- using element's property -->
+    <div class="outer" id="outer">
+        <p class="inner">
+            I'm a paragraph
+            <span class="center">I'm a span</span>
+        </p>
+    </div>
+</body>
+
+</html>

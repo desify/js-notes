@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+    }
+
+    .enter {
+        background-color: purple;
+
+    }
+
+    .over {
+        background-color: green;
+    }
+
+    div {
+        padding: 20px;
+    }
+
+    p {
+        border: 3px solid black;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <h1>Mouse Events</h1>
+    <hr>
+    <h2>click, dblclick, mousedown, mouseup, mousemove</h2>
+    <div tabindex="0" class="box">
+        Hello World!
+    </div>
+    <hr>
+    <h2>mouseenter, mouseleave vs mouseover, mouseout</h2>
+
+    <div class="container">
+        <div class="enter">
+            <p>I'm a paragraph</p>
+            <p>I'm a paragraph</p>
+            <p>I'm a paragraph</p>
+        </div>
+        <div class="over">
+            <p>I'm a paragraph</p>
+            <p>I'm a paragraph</p>
+            <p>I'm a paragraph</p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
